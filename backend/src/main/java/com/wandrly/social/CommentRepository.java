@@ -5,6 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import java.util.UUID;
 
 public interface CommentRepository extends JpaRepository<Comment, String> {
 
@@ -13,7 +14,7 @@ public interface CommentRepository extends JpaRepository<Comment, String> {
             "LEFT JOIN FETCH c.parent " +
             "WHERE c.post.id = :postId " +
             "ORDER BY c.createdAt ASC")
-    Page<Comment> findByPostId(@Param("postId") String postId, Pageable pageable);
+    Page<Comment> findByPostId(@Param("postId") UUID postId, Pageable pageable);
 
-    long countByPostId(String postId);
+    long countByPostId(UUID postId);
 }

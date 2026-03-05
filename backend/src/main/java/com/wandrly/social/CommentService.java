@@ -33,7 +33,8 @@ public class CommentService {
 
     @Transactional(readOnly = true)
     public Page<CommentResponse> getComments(String postId, Pageable pageable) {
-        Page<Comment> page = commentRepository.findByPostId(postId, pageable);
+        UUID postUuid = UUID.fromString(postId);
+        Page<Comment> page = commentRepository.findByPostId(postUuid, pageable);
         List<CommentResponse> responses = page.getContent().stream()
                 .map(this::toResponse).toList();
         return new PageImpl<>(responses, pageable, page.getTotalElements());
