@@ -1,0 +1,10 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "mvn -B package -DskipTests"
+
+[deploy]
+startCommand = "java -Dserver.port=$PORT -jar target/wandrly-0.0.1-SNAPSHOT.jar"
+healthcheckPath = "/api/posts/public/explore?size=1"
+healthcheckTimeout = 60
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3

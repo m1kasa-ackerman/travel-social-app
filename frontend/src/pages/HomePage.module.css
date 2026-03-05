@@ -1,0 +1,295 @@
+.page {
+    background: var(--bg-base);
+    min-height: calc(100vh - 88px);
+    padding: var(--space-6) 0 var(--space-12);
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+    display: grid;
+    grid-template-columns: 272px 1fr;
+    gap: var(--space-6);
+    align-items: start;
+}
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    position: sticky;
+    top: 100px;
+}
+
+.sideCard {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: var(--space-4);
+}
+
+.sideHeader {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+}
+
+/* Profile Quickview */
+.profileQuick {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    margin-bottom: var(--space-4);
+}
+
+.sideAvatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sideDisplayName {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.sideHandle {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.statsRow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+}
+
+.statNum {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.statLabel {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.statDiv {
+    width: 1px;
+    height: 24px;
+    background: var(--border-default);
+}
+
+/* Tags */
+.tagCloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tagPill {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border-radius: var(--radius-pill);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 10px;
+    text-decoration: none;
+    transition: background 150ms, color 150ms;
+}
+
+.tagPill:hover {
+    background: var(--accent-primary);
+    color: white;
+    text-decoration: none;
+}
+
+/* Explorers */
+.explorersList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.explorerRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+}
+
+.explorerLeft {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+}
+
+.explorerAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.explorerName {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.explorerHandle {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.followBtn {
+    height: 28px;
+    padding: 0 10px;
+    border: 1px solid var(--accent-link);
+    color: var(--accent-link);
+    background: none;
+    border-radius: var(--radius-btn);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 150ms, color 150ms;
+    white-space: nowrap;
+}
+
+.followBtn:hover {
+    background: var(--accent-link);
+    color: white;
+}
+
+/* Feed */
+.feed {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.feedTabs {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.feedTab {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border: none;
+    border-radius: var(--radius-pill);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background 150ms, color 150ms;
+}
+
+.feedTabActive {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.feedTab:hover:not(.feedTabActive) {
+    background: var(--border-default);
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .inner {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+
+/* Sidebar avatar letter placeholder */
+.sideAvatarPlaceholder {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* Follow button — following state */
+.followBtnFollowing {
+    background: var(--accent-link);
+    color: white;
+    border-color: var(--accent-link);
+}
+
+/* Empty feed state */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 24px;
+    text-align: center;
+}
+
+.emptyIcon {
+    font-size: 56px;
+    margin-bottom: 16px;
+}
+
+.emptyTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.emptyDesc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    max-width: 320px;
+}
+
+.emptyCreateBtn {
+    background: var(--accent-primary);
+    color: white;
+    padding: 10px 24px;
+    border-radius: var(--radius-btn);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 150ms;
+}
+
+.emptyCreateBtn:hover {
+    background: var(--accent-hover);
+    text-decoration: none;
+}

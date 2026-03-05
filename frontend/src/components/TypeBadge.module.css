@@ -1,0 +1,26 @@
+.badge {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.itinerary {
+    background: var(--badge-itinerary-bg);
+    color: var(--badge-itinerary-txt);
+}
+
+.restaurant {
+    background: var(--badge-restaurant-bg);
+    color: var(--badge-restaurant-txt);
+}
+
+.experience {
+    background: var(--badge-experience-bg);
+    color: var(--badge-experience-txt);
+}

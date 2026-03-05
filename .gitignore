@@ -1,0 +1,45 @@
+# ========================
+# Wandrly — .gitignore
+# ========================
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+mvnw.cmd
+
+# IntelliJ IDEA / Eclipse
+.idea/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+
+# Node / Frontend
+node_modules/
+dist/
+.output/
+
+# Vite cache
+.vite/
+
+# Environment variables — NEVER commit these
+.env
+backend/.env
+frontend/.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+spring.log

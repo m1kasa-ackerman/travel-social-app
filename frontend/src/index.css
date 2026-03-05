@@ -1,0 +1,311 @@
+/* =========================================
+   WANDRLY — Global Design System
+   ========================================= */
+
+/* Google Fonts imported in index.html */
+
+:root {
+  /* Background */
+  --bg-base: #DAE0E6;
+  --bg-surface: #FFFFFF;
+  --bg-nav: #FFFFFF;
+  --bg-input: #F6F7F8;
+
+  /* Accent */
+  --accent-primary: #FF4500;
+  --accent-hover: #CC3700;
+  --accent-link: #0079D3;
+  --accent-success: #46D160;
+
+  /* Text */
+  --text-primary: #1C1C1C;
+  --text-secondary: #878A8C;
+  --text-on-accent: #FFFFFF;
+
+  /* Border */
+  --border-default: #EDEFF1;
+  --border-focus: #0079D3;
+
+  /* Tag */
+  --tag-bg: #F6F7F8;
+  --tag-text: #878A8C;
+
+  /* Saved */
+  --saved-active: #FF4500;
+
+  /* Badges */
+  --badge-itinerary-bg: #E8F0FE;
+  --badge-itinerary-txt: #0079D3;
+  --badge-restaurant-bg: #FFF3EE;
+  --badge-restaurant-txt: #FF4500;
+  --badge-experience-bg: #E6F4EA;
+  --badge-experience-txt: #1E8449;
+
+  /* Error */
+  --error: #FF585B;
+
+  /* Skeleton */
+  --skeleton: #EDEFF1;
+
+  /* Spacing (4px grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Border radius */
+  --radius-card: 4px;
+  --radius-btn: 2px;
+  --radius-pill: 20px;
+  --radius-input: 4px;
+  --radius-modal: 8px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow-modal: 0 8px 32px rgba(0, 0, 0, 0.18);
+  --shadow-nav: 0 1px 0 var(--border-default);
+
+  /* Typography */
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+/* =========================================
+   RESET & BASE
+   ========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+/* =========================================
+   SCROLLBAR (subtle webkit)
+   ========================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* =========================================
+   UTILITY CLASSES
+   ========================================= */
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.text-hero {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.text-h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text-h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.text-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text-body {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-sm {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.text-xs {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* =========================================
+   SKELETON / SHIMMER
+   ========================================= */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #EDEFF1 25%, #F6F7F8 50%, #EDEFF1 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--radius-card);
+}
+
+/* =========================================
+   SAVE BOUNCE ANIMATION
+   ========================================= */
+
+@keyframes save-bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.save-active {
+  animation: save-bounce 200ms ease-out forwards;
+  color: var(--saved-active) !important;
+}
+
+/* =========================================
+   STAGGER ANIMATION
+   ========================================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-stagger {
+  animation: fadeInUp 0.35s ease both;
+}
+
+/* =========================================
+   LEAFLET OVERRIDES
+   ========================================= */
+
+.leaflet-container {
+  font-family: var(--font-sans) !important;
+}
+
+/* =========================================
+   HIDDEN SCROLLBAR (horizontal scroll rows)
+   ========================================= */
+.scroll-row {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: var(--space-2);
+}
+
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
