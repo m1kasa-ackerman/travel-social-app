@@ -42,7 +42,7 @@ public class MessageService {
 
         // Return existing conversation if already exists
         return conversationRepo.findBetween(
-                requester.getId().toString(), recipient.getId().toString())
+                requester.getId(), recipient.getId())
                 .map(c -> toSummary(c, requester))
                 .orElseGet(() -> {
                     Conversation c = Conversation.builder()
@@ -76,7 +76,7 @@ public class MessageService {
     // ----------- List my conversations -----------
     @Transactional(readOnly = true)
     public Page<ConversationSummary> listConversations(User user, Pageable pageable) {
-        Page<Conversation> page = conversationRepo.findAllByUserId(user.getId().toString(), pageable);
+        Page<Conversation> page = conversationRepo.findAllByUserId(user.getId(), pageable);
         List<ConversationSummary> content = page.getContent().stream()
                 .map(c -> toSummary(c, user)).toList();
         return new PageImpl<>(content, pageable, page.getTotalElements());
@@ -121,8 +121,8 @@ public class MessageService {
 
     // ----------- helpers -----------
     private boolean isParticipant(Conversation c, User user) {
-        return c.getRequester().getId().equals(user.getId()) ||
-                c.getRecipient().getId().equals(user.getId());
+        return c.getRequester().getId().equals(user.getId())
+                || c.getRecipient().getId().equals(user.getId());
     }
 
     private ConversationSummary toSummary(Conversation c, User me) {

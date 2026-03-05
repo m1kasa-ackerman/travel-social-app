@@ -1,12 +1,13 @@
 package com.wandrly.social;
 
+import com.wandrly.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface SavedPlaceRepository extends JpaRepository<SavedPlace, String> {
-    List<SavedPlace> findByUserIdOrderBySavedAtDesc(String userId);
+    List<SavedPlace> findByUserOrderBySavedAtDesc(User user);
 
-    boolean existsByUserIdAndName(String userId, String name);
+    boolean existsByUserAndName(User user, String name);
 
-    void deleteByUserIdAndId(String userId, String id);
+    void deleteByUserAndId(User user, String id);
 }
