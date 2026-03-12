@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { PostCard } from '../components/PostCard';
-import { TypeBadge } from '../components/TypeBadge';
 import { mockPosts, mockDestinations, mockUsers } from '../data/mockData';
 import styles from './ExplorePage.module.css';
 

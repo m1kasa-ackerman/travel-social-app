@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import styles from './MessagesPage.module.css';
 
 export default function MessagesPage() {
-    const { user } = useAuth();
+    useAuth();
     const navigate = useNavigate();
     const [conversations, setConversations] = useState<ConversationSummary[]>([]);
     const [loading, setLoading] = useState(true);

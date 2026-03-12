@@ -36,7 +36,7 @@ export function CreatePostPage() {
     const [visibility, setVisibility] = useState<'public' | 'followers'>('public');
     const [rating, setRating] = useState(0);
     const [days, setDays] = useState<Day[]>([{ id: 1, stops: [] }]);
-    const [coverImage, setCoverImage] = useState<File | null>(null);
+    const [, setCoverImage] = useState<File | null>(null);
     const [coverPreview, setCoverPreview] = useState<string>('');
     const [submitting, setSubmitting] = useState(false);
 

@@ -115,7 +115,7 @@ export function ReviewPage() {
                         <div className={styles.moreReviews}>
                             <h2 className="text-h2" style={{ marginBottom: 'var(--space-4)' }}>More Restaurant Reviews</h2>
                             <div className={styles.moreGrid}>
-                                {relatedPosts.slice(0, 2).map((p, i) => (
+                                {relatedPosts.slice(0, 2).map((p) => (
                                     <Link key={p.id} to={`/review/${p.id}`} className={styles.moreCard}>
                                         <img src={p.coverImage} alt={p.title} className={styles.moreImg} />
                                         <div className={styles.moreInfo}>
