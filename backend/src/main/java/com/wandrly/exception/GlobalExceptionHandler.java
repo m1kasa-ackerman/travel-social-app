@@ -77,6 +77,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGeneric(Exception ex) {
+        ex.printStackTrace();
         // Never expose internal errors to the client
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
