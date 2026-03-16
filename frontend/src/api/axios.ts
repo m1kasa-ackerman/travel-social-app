@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://travel-social-app-production-11a0.up.railway.app/api',
+    baseURL: 'https://travel-social-app-production-11a0.up.railway.app',
     timeout: 10000,
     headers: { 'Content-Type': 'application/json' },
 });
